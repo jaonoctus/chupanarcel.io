@@ -3,7 +3,7 @@ const tx = readonly({
   hash: '8a45257a73ffb4e31b0b3afe3e82f85ee71bdbcf1da26263a34c88f1c9c10dda'
 })
 
-const explorerLink = computed(() => `https://bitcoinexplorer.org/tx/${tx.hash}`)
+const explorerLink = computed(() => `https://mempool.space/tx/${tx.hash}`)
 </script>
 
 <template>
