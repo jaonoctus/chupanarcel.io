@@ -11,10 +11,15 @@ const txSegwit = readonly({
   hash: '738309023e4862493cfdaa85599c57a4508b4660f12d0944984bc8de78541ed8'
 })
 
+const txTaprootNarcelio = readonly({
+  hash: 'de1dd38997b0e27b7b1d2db376c1438e24d10b2502e423786dccc83510f805d0'
+})
+
 const explorer = 'mempool.space'
 
 const txTaprootLink = computed(() => `https://${explorer}/tx/${txTaproot.hash}`)
 const txSegwitLink = computed(() => `https://${explorer}/tx/${txSegwit.hash}`)
+const txTaprootNarcelioLink = computed(() => `https://${explorer}/tx/${txTaprootNarcelio.hash}`)
 
 const isNarcelio = ref(true)
 
@@ -86,6 +91,11 @@ const switchPicture = () => {
         </p>
         <p>
           Joking aside, know that you have been an inspiration to me! Thank you so much man.<br/>Go horse guys!
+        </p>
+        <p class="text-center">
+          <a :href="txTaprootNarcelioLink" target="_blank" class="p-3 bg-gray-500 hover:bg-gray-600 rounded-full">
+            "Narcelio is still here" <i class="fas fa-share-square"></i>
+          </a>
         </p>
       </div>
       <div class="team">
