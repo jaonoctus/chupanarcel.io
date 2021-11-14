@@ -1,9 +1,30 @@
 <script lang="ts" setup>
+import jaonoctusPicture from '../assets/images/jaonoctus.jpg'
+import narcelioPicture from '../assets/images/narcelio.jpg'
+import safadaoPicture from '../assets/images/safadao.jpg'
+
 const tx = readonly({
   hash: '8a45257a73ffb4e31b0b3afe3e82f85ee71bdbcf1da26263a34c88f1c9c10dda'
 })
 
 const explorerLink = computed(() => `https://mempool.space/tx/${tx.hash}`)
+
+const isNarcelio = ref(true)
+
+const narcelio = ref(narcelioPicture)
+
+const switchPicture = () => {
+  if (isNarcelio.value) {
+    narcelio.value = safadaoPicture
+    isNarcelio.value = false
+
+    return
+  }
+
+  isNarcelio.value = true
+
+  narcelio.value = narcelioPicture
+}
 </script>
 
 <template>
@@ -35,7 +56,7 @@ const explorerLink = computed(() => `https://mempool.space/tx/${tx.hash}`)
             Nessa época ainda não tinhamos Lightning Network e estávamos brigando pelo tamanho do bloco! (Bons tempos!)
           </p>
           <p>
-            Narcelio, desenvolvedor old school, estava brincando com o novo endereço segwit e decidiu criar uma transação escrevendo no OP_RETURN "Narcelio was here". 
+            Narcelio, desenvolvedor old school, estava brincando com o novo endereço segwit e decidiu criar uma transação escrevendo no OP_RETURN "Narcelio was here".
           </p>
           <p>
             Ideia que intrigou o João Dias, desenvolvedor troll master. Aproveitando o momento para aprontar e estudar, João foi atrás de seu plano malígno para deixar o Narcélio para trás e bolou o projeto Chupa Narcélio.
@@ -57,8 +78,11 @@ const explorerLink = computed(() => `https://mempool.space/tx/${tx.hash}`)
           </p>
         </div>
         <div class="team">
-          <a href="#">
-            <img src="jaonoctus.jpeg" alt="jaonoctus" />
+          <a href="https://twitter.com/jaonoctus" target="_blank">
+            <img :src="jaonoctusPicture" alt="jaonoctus" />
+          </a>
+          <a href="https://twitter.com/narceIio" target="_blank" @mouseover="switchPicture" @mouseout="switchPicture">
+            <img :src="narcelio" alt="narcelio" />
           </a>
         </div>
       </div>
@@ -99,13 +123,14 @@ const explorerLink = computed(() => `https://mempool.space/tx/${tx.hash}`)
   .team {
     text-align: center;
     margin: 0px auto 50px;
-    display: block;
+    display: flex;
+    justify-content: center;
   }
   .team img {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    margin: 50px auto;
+    margin: 50px 10px;
   }
   .tx {
     margin: 70px auto;
@@ -122,7 +147,7 @@ const explorerLink = computed(() => `https://mempool.space/tx/${tx.hash}`)
   .about {
     max-width: 800px;
     margin: auto;
-  } 
+  }
   .content {
     text-align: center;
     display: flex;
