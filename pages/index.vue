@@ -74,7 +74,7 @@ const switchPicture = () => {
         </p>
         <ul>
           <li>
-            First step, of course, buy the chupanarcel.io domain
+            First step, of course, buy the chupanarcel.io domain.
           </li>
           <li>
             Second, find out how to create a taprrot address and deposit a few satoshis there in the mainnet.
@@ -85,7 +85,7 @@ const switchPicture = () => {
           Mission accomplished, the world is saved!
         </p>
         <p>
-          Joking aside, know that you have been an inspiration to me! Thank you very much. Go horse guys!
+          Joking aside, know that you have been an inspiration to me! Thank you so much man.<br/>Go horse guys!
         </p>
       </div>
       <div class="team">
