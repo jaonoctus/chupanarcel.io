@@ -4,7 +4,7 @@ import narcelioPicture from '../assets/images/narcelio.jpg'
 import safadaoPicture from '../assets/images/safadao.jpg'
 
 const txTaproot = readonly({
-  hash: '8a45257a73ffb4e31b0b3afe3e82f85ee71bdbcf1da26263a34c88f1c9c10dda'
+  hash: '5430314fa1ce7c16501748b43d387eb181d9d1828b2e63cb872c38026e8bf4a5'
 })
 
 const txSegwit = readonly({
