@@ -13,7 +13,7 @@ export default {
 </script>
 
 <template>
-  <div class="">
+  <div>
     <NuxtPage />
   </div>
 </template>
