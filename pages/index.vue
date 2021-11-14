@@ -3,11 +3,18 @@ import jaonoctusPicture from '../assets/images/jaonoctus.jpg'
 import narcelioPicture from '../assets/images/narcelio.jpg'
 import safadaoPicture from '../assets/images/safadao.jpg'
 
-const tx = readonly({
+const txTaproot = readonly({
   hash: '8a45257a73ffb4e31b0b3afe3e82f85ee71bdbcf1da26263a34c88f1c9c10dda'
 })
 
-const explorerLink = computed(() => `https://mempool.space/tx/${tx.hash}`)
+const txSegwit = readonly({
+  hash: '738309023e4862493cfdaa85599c57a4508b4660f12d0944984bc8de78541ed8'
+})
+
+const explorer = 'mempool.space'
+
+const txTaprootLink = computed(() => `https://${explorer}/tx/${txTaproot.hash}`)
+const txSegwitLink = computed(() => `https://${explorer}/tx/${txSegwit.hash}`)
 
 const isNarcelio = ref(true)
 
@@ -28,63 +35,66 @@ const switchPicture = () => {
 </script>
 
 <template>
-  <div class="content">
-    <div>
+  <div class="bg-gray-900 flex justify-center m-auto text-white text-center">
+    <div class="container">
+      <h2 class="logo">
+        Tapr<i class="fab fa-bitcoin"></i><i class="fab fa-bitcoin"></i>t Activated
+      </h2>
       <div>
-        <h2 class="logo">
-          Tapr<i class="fab fa-bitcoin"></i><i class="fab fa-bitcoin"></i>t Activated
+        <span>TL;DR: I beat you, Narcélio!</span>
+      </div>
+      <div>
+        <h2>
+          Transaction
         </h2>
-        <div class="chupa-narcelio">
-          CHUPA, NARCÉLIO!
-        </div>
-        <div class="tx">
-          <h2>
-            Transaction
-          </h2>
-          <a :href="explorerLink" target="_blank" class="">
-            {{ tx.hash }} <i class="fas fa-share-square"></i>
+        <a :href="txTaprootLink" target="_blank" class="bg-gray-500 hover:bg-gray-600 p-5 rounded-full">
+          "Chupa, Narcélio!" <i class="fas fa-share-square"></i>
+        </a>
+      </div>
+      <div class="about pt-10">
+        <h2>
+          About
+        </h2>
+        <p>
+          This story began four years ago...
+        </p>
+        <p>
+          Back then we still didn't have Lightning Network and we were fighting over the size of the block! (the old days!)
+        </p>
+        <p>
+          Narcelio, an old school developer, OG bitcoiner, was playing with the nested segwit addresses and decided to create one of the first spending-transactions, writing in the OP_RETURN:
+        </p>
+        <p class="text-center">
+          <a :href="txSegwitLink" target="_blank" class="p-3 bg-gray-500 hover:bg-gray-600 rounded-full">
+            "Narcelio was here" <i class="fas fa-share-square"></i>
           </a>
-        </div>
-        <div class="about">
-          <h2>
-            About
-          </h2>
-          <p>
-            Para poder te contar essa história preciso voltar há 4 anos atrás...
-          </p>
-          <p>
-            Nessa época ainda não tinhamos Lightning Network e estávamos brigando pelo tamanho do bloco! (Bons tempos!)
-          </p>
-          <p>
-            Narcelio, desenvolvedor old school, estava brincando com o novo endereço segwit e decidiu criar uma transação escrevendo no OP_RETURN "Narcelio was here".
-          </p>
-          <p>
-            Ideia que intrigou o João Dias, desenvolvedor troll master. Aproveitando o momento para aprontar e estudar, João foi atrás de seu plano malígno para deixar o Narcélio para trás e bolou o projeto Chupa Narcélio.
-          </p>
-          <ul>
-            <li>
-              O primeiro passo é claro foi comprar esse domínio: chupanarcel.io
-            </li>
-            <li>
-            O segundo foi descobrir como criar um endereço novo e já depositar uns satoshinhos na mainnet.
-            </li>
-          </ul>
-          <p>
-            Feito esses dois primeiros passos ele esperou até o bloco 709632 e soltou sua transação escrevendo no OP_RETURN: chupanarcel.io !
-            Trolagem feita, o mundo está salvo!
-          </p>
-          <p>
-            Brincadeiras a parte, esses dois feras são exemplos pra nós desenvolvedores! Com nós sabemos que a trolagem não tem limite e que o huehuebr vai dominar o bitcoin! Go horse galera, we luv you!
-          </p>
-        </div>
-        <div class="team">
-          <a href="https://twitter.com/jaonoctus" target="_blank">
-            <img :src="jaonoctusPicture" alt="jaonoctus" />
-          </a>
-          <a href="https://twitter.com/narceIio" target="_blank" @mouseover="switchPicture" @mouseout="switchPicture">
-            <img :src="narcelio" alt="narcelio" />
-          </a>
-        </div>
+        </p>
+        <p>
+          I was amazed! This encouraged me to study more about Bitcoin. And then I started the evil plan to do the same and came up with the "Chupa, Narcélio!" project.
+        </p>
+        <ul>
+          <li>
+            First step, of course, buy the chupanarcel.io domain
+          </li>
+          <li>
+            Second, find out how to create a taprrot address and deposit a few satoshis there in the mainnet.
+          </li>
+        </ul>
+        <p>
+          After these two steps, waited until block 709632 and broadcasted this transaction by writing to OP_RETURN: chupanarcel.io.
+          Mission accomplished, the world is saved!
+        </p>
+        <p>
+          Joking aside, know that you have been an inspiration to me! Thank you very much. Go horse guys!
+        </p>
+      </div>
+      <div class="team">
+        <a href="https://twitter.com/jaonoctus" target="_blank">
+          <img :src="jaonoctusPicture" alt="jaonoctus" />
+        </a>
+        <a href="https://twitter.com/narceIio" target="_blank" @mouseover="switchPicture" @mouseout="switchPicture">
+          <img :src="narcelio" alt="narcelio" />
+        </a>
       </div>
     </div>
   </div>
@@ -93,9 +103,6 @@ const switchPicture = () => {
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400');
 
-  body {
-    background: #14141b;
-  }
   h2 {
     font-size: 30px;
     font-weight: 600;
@@ -132,18 +139,6 @@ const switchPicture = () => {
     border-radius: 50%;
     margin: 50px 10px;
   }
-  .tx {
-    margin: 70px auto;
-  }
-  .tx a {
-    margin: 50px auto;
-    background: gray;
-    padding: 20px;
-    border-radius: 50px;
-  }
-  .tx a:hover {
-    background: #212121;
-  }
   .about {
     max-width: 800px;
     margin: auto;
@@ -167,9 +162,6 @@ const switchPicture = () => {
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-  .chupa-narcelio {
-    margin: 40px auto;
-  }
   .fa-bitcoin {
     font-size: 57px;
     top: 0px;
