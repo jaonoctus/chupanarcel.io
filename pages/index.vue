@@ -92,7 +92,7 @@ const switchPicture = () => {
         <a href="https://twitter.com/jaonoctus" target="_blank">
           <img :src="jaonoctusPicture" alt="jaonoctus" />
         </a>
-        <a href="https://twitter.com/narceIio" target="_blank" @mouseover="switchPicture" @mouseout="switchPicture">
+        <a href="https://twitter.com/narcelio" target="_blank" @mouseover="switchPicture" @mouseout="switchPicture">
           <img :src="narcelio" alt="narcelio" />
         </a>
       </div>
