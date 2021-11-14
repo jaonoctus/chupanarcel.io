@@ -59,7 +59,7 @@ const switchPicture = () => {
           This story began four years ago...
         </p>
         <p>
-          Back then we still didn't have Lightning Network and we were fighting over the size of the block! (the old days!)
+          Back then we still didn't have Lightning Network and we were fighting over the block size! (the old days!)
         </p>
         <p>
           Narcelio, an old school developer, OG bitcoiner, was playing with the nested segwit addresses and decided to create one of the first spending-transactions, writing in the OP_RETURN:
@@ -77,7 +77,7 @@ const switchPicture = () => {
             First step, of course, buy the chupanarcel.io domain.
           </li>
           <li>
-            Second, find out how to create a taprrot address and deposit a few satoshis there in the mainnet.
+            Second, find out how to create a taproot address and deposit a few satoshis there in the mainnet.
           </li>
         </ul>
         <p>
