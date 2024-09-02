@@ -199,4 +199,19 @@ ul {
   animation-timing-function: ease-out;
   animation-iteration-count: infinite;
 }
+ul {
+  list-style: disc;
+  text-align: left;
+  width: 100%;
+  max-width: 520px;
+  margin: 20px auto 40px;
+  font-size: 18px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+li {
+  padding-bottom: 25px;
+  line-height: 1.6;
+}
 </style>
