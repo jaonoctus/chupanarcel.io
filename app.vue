@@ -32,6 +32,18 @@ const switchPicture = () => {
   isNarcelio.value = true
   narcelio.value = '/images/narcelio.jpg'
 }
+
+const actualYearsDifference = computed(() => {
+  const pastDate = new Date('2017-08-24T01:49:35');
+  const currentDate = new Date();
+  const yearsDifference = currentDate.getFullYear() - pastDate.getFullYear();
+  const isBeforeAnniversary =
+      currentDate.getMonth() < pastDate.getMonth() ||
+      (currentDate.getMonth() === pastDate.getMonth() && currentDate.getDate() < pastDate.getDate());
+
+  const actualYearsDifference = isBeforeAnniversary ? yearsDifference - 1 : yearsDifference;
+  return `${actualYearsDifference} years ago`;
+})
 </script>
 
 <template>
@@ -56,7 +68,7 @@ const switchPicture = () => {
           About
         </h2>
         <p>
-          This story began four years ago...
+          This story began {{ actualYearsDifference }} years ago...
         </p>
         <p>
           Back then we still didn't have Lightning Network and we were fighting over the block size! (the old days!)
